@@ -47,9 +47,10 @@ const signIn = async (req: Request, res: Response, next: NextFunction) => {
 	}
 }
 
-const currentUser = (req: Request, res: Response, next: NextFunction) => {
+const currentUser = async (req: Request, res: Response, next: NextFunction) => {
+	const users = await User.find()
   	res.json({
-		  message: "Welcome"
+		  users
 	  })
 }
 

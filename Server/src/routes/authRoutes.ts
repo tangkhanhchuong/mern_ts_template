@@ -11,6 +11,6 @@ router.post('/sign-up', AuthValidator.signUp, validateRequest, AuthController.si
 
 router.post('/sign-in', AuthValidator.signIn, validateRequest, AuthController.signIn)
 
-router.get('/current-user', requireAuth, AuthController.currentUser)
+router.get('/current-user', AuthController.currentUser)
 
 export { router as AuthRouter }

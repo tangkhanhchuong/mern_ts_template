@@ -14,6 +14,4 @@ run:
 
 cleanup:
 	docker-compose down
-	docker rm $$(docker ps -a -f status=exited -q)
 	docker rmi $$(docker images -a)
-	rm -rf .pgdata

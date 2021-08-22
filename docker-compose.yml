@@ -1,0 +1,37 @@
+version: "3"
+services:
+    web_app:
+        image: web_app
+        stdin_open: true
+        environment:
+            CHOKIDAR_USEPOLLING: "true"
+        ports:
+            - "3000:3000"
+        networks:
+            - mern-app
+        volumes:
+            - ./WebApp:/app
+            - /app/node_modules
+    express_server:
+        image: express_server
+        ports:
+            - "5000:5000"
+        networks:
+            - mern-app
+        volumes:
+            - ./Server:/app
+            - /app/node_modules
+        depends_on:
+            - mongo
+    mongo:
+        image: mongo:3.6.19-xenial
+        ports:
+            - "27017:27017"
+        networks:
+            - mern-app
+networks:
+    mern-app:
+        driver: bridge  
+volumes:
+  mongo-data:
+    driver: local

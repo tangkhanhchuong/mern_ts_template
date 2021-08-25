@@ -5,6 +5,8 @@ services:
         stdin_open: true
         environment:
             CHOKIDAR_USEPOLLING: "true"
+        depends_on: 
+            - express_server
         ports:
             - "3000:3000"
         networks:

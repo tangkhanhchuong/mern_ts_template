@@ -15,6 +15,7 @@ app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use("/storage", express.static(__dirname + "/storage"))
 
 import { AuthRouter, ProductRouter } from './routes'
 app.use('/auth', AuthRouter)

@@ -9,3 +9,4 @@ Server/node_modules
 Server/yarn.lock
 Server/.env
 Server/dist
+Server/src/storage

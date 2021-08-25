@@ -14,4 +14,4 @@ run:
 
 cleanup:
 	docker-compose down
-	docker rmi $$(docker images -a)
+	docker rmi -f $$(docker images -a -q)

@@ -1,57 +1,41 @@
 import React, { FC, ChangeEvent } from "react"
-import styles from "styled-components"
+import { FaThumbsUp, FaThumbsDown, FaShare, FaSave } from "react-icons/fa"
 
 import { IVideoProps } from "@root/models"
 import { NumberFormatter } from "@root/utils/formatter"
 
 import { TopTab } from "../TopTab/TopTab"
 import { videoTabItems } from "./videoTabItems"
+import IconAction from "../IconAction/IconAction"
+import { 
+    StActions, StVideo, 
+    StVideoContainer, StVideoSubTitleContainer, 
+    StVideoTitle1, StVideoTitle2 
+} from "./Video.style"
 
 const { REACT_APP_SYSTEM_URL } = process.env
-
-const StVideoContainer = styles.div({
-    width: "700px",
-    margin: "20px",
-    marginLeft: "130px"
-})
-
-const StVideo = styles.video({
-    width: "100%"
-})
-
-const StVideoTitle1 = styles.div({
-    fontWeight: "bold",
-    fontSize: "26px",
-    marginTop: "10px"
-})
-
-const StVideoTitle2 = styles.div({
-    color: "#888788",
-    marginTop: "15px",
-    marginBottom: "15px",
-    paddingBottom: "15px",
-    borderBottom: "1px solid lightgray"
-})
 
 const Video: FC<{ video: IVideoProps }> = ({ video }) => {
 
     const { title, source, owner, description, numberOfView, publishedDate, type } = video
-
     const fullSource: string = `${REACT_APP_SYSTEM_URL}${source}`
-
-    const [value, setValue] = React.useState(2)
-
-	const handleChange = (event: ChangeEvent<{}>, newValue: number) => {
-		setValue(newValue)
-	}
 
     return (
         <StVideoContainer>
-            <StVideo controls>
+            <StVideo autoPlay controls muted>
                 <source src={fullSource} type={type} />
             </StVideo>
             <StVideoTitle1>{ title }</StVideoTitle1>
-            <StVideoTitle2>{ NumberFormatter.toLocaleString(numberOfView) } viewers • { publishedDate }</StVideoTitle2>
+            <StVideoSubTitleContainer>
+                <StVideoTitle2>{ NumberFormatter.toLocaleString(numberOfView) } viewers • { publishedDate }</StVideoTitle2>
+                <StActions>
+                    <IconAction Icon={FaThumbsUp} action="5000" />
+                    <IconAction Icon={FaThumbsDown} action="50" />
+                    <IconAction Icon={FaShare} action="share" />
+                    <IconAction Icon={FaSave} action="save" />   
+                </StActions>
+            </StVideoSubTitleContainer>
+            <br />
             <TopTab items={videoTabItems} />
         </StVideoContainer>
     )   

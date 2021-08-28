@@ -1,23 +1,22 @@
 import React from "react"
+
 import { ITopTabItemProps } from "@root/models"
+import Comments from "../Comments/Comments"
+import VideoOverview from "../VideoOverview/VideoOverview"
 
 const Tab1 = () => (
     <>Overview Tab</>
 )
 
 const Tab2 = () => (
-    <>Channel Tab</>
-)
-
-const Tab3 = () => (
-    <>Comments Tab</>
+    <div>Channel Tab</div>
 )
 
 export const videoTabItems: ITopTabItemProps[] = [
     {
         id: "0",
         label: "overview",
-        component: Tab1
+        component: VideoOverview
     },
     {
         id: "1",
@@ -27,6 +26,6 @@ export const videoTabItems: ITopTabItemProps[] = [
     {
         id: "2",
         label: "comments",
-        component: Tab3
+        component: Comments
     }
 ]

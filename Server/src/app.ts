@@ -1,10 +1,11 @@
-import express, { NextFunction, Request, Response } from 'express'
-import { config as dotenv } from 'dotenv'
+import express, { NextFunction, Request, Response } from "express"
+import http, { Server } from "http"
+import { config as dotenv } from "dotenv"
 import cors from "cors"
-import morgan from 'morgan'
+import morgan from "morgan"
 
-import { errorHandler } from './middlewares/errorHandler'
-import { NotFoundError } from './services/errors'
+import { errorHandler } from "./middlewares/errorHandler"
+import { NotFoundError } from "./services/errors"
 
 dotenv()
 
@@ -16,10 +17,11 @@ app.use(morgan("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use("/storage", express.static(__dirname + "/storage"))
+const server: Server = http.createServer(app)
 
-import { AuthRouter, ProductRouter } from './routes'
-app.use('/auth', AuthRouter)
-app.use('/product', ProductRouter)
+import { AuthRouter, ProductRouter } from "./routes"
+app.use("/auth", AuthRouter)
+app.use("/product", ProductRouter)
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
 	res.json({
@@ -27,17 +29,19 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 	})
 })
 
-app.all('*', async (req: Request, res: Response, next: NextFunction) => {
+app.all("*", async (req: Request, res: Response, next: NextFunction) => {
   	next(new NotFoundError());
 });
 
 app.use(errorHandler);
 
-import { connectToMongoDb } from './configs/database'
+import { connectToMongoDb } from "./configs/database"
+import { connectToSocket } from "./services/socket"
 const bootServer = async () => {
 	console.log("Booting server ...")
 	await connectToMongoDb()
-	app.listen(PORT, () => {
+	await connectToSocket(server)
+	server.listen(PORT, () => {
 		console.log(`Listen at PORT ${PORT}!!!`)
 	})
 }

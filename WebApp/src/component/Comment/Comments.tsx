@@ -1,4 +1,4 @@
-import { connectToSocket } from '@root/hooks/socket'
+import { connectToSocket } from '@root/hook/socket'
 import React from 'react'
 import { useEffect } from 'react'
 

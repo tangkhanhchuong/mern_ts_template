@@ -1,5 +1,5 @@
-import { connectToMongoDb } from '../configs/database'
-import { User, Product } from '../models'
+import { connectToMongoDb } from '../config/database'
+import { User, Product } from '../model'
 import { productsSeeder } from './products.seeder'
 import { usersSeeder } from './users.seeder'
 

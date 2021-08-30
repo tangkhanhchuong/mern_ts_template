@@ -1,8 +1,8 @@
 import React, { FC, ChangeEvent } from "react"
 import { FaThumbsUp, FaThumbsDown, FaShare, FaSave } from "react-icons/fa"
 
-import { IVideoProps } from "@root/models"
-import { NumberFormatter } from "@root/utils/formatter"
+import { IVideoProps } from "@root/model"
+import { NumberFormatter } from "@root/util/formatter"
 
 import { TopTab } from "../TopTab/TopTab"
 import { videoTabItems } from "./videoTabItems"

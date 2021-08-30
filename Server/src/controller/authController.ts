@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
-import { User, UserAttrs } from '../models'
-import { Password } from '../services/password'
-import { BadRequestError } from '../services/errors'
+import { User, UserAttrs } from '../model'
+import { Password } from '../service/password'
+import { BadRequestError } from '../service/errors'
 
 const signUp = async (req: Request, res: Response, next: NextFunction) => {
 	const { email, password } = req.body as UserAttrs

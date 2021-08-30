@@ -1,12 +1,8 @@
 import React from "react"
 
-import { ITopTabItemProps } from "@root/models"
-import Comments from "../Comments/Comments"
+import { ITopTabItemProps } from "@root/model"
+import Comments from "../Comment/Comments"
 import VideoOverview from "../VideoOverview/VideoOverview"
-
-const Tab1 = () => (
-    <>Overview Tab</>
-)
 
 const Tab2 = () => (
     <div>Channel Tab</div>

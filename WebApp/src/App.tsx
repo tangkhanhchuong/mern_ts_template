@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styles from "styled-components"
 
-import { IUserProps } from "@root/models"
-import authRequest from "./core/http/authResponse"
-
-import VideoItem from "./components/VideoItem/VideoItem"
+import VideoItem from "./component/VideoItem/VideoItem"
 
 const videoData = [
 	{

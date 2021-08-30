@@ -2,7 +2,7 @@ import React, { FC, ChangeEvent } from "react"
 import SwipeableViews from "react-swipeable-views"
 import { AppBar, Tabs, Tab } from "@material-ui/core"
 
-import { ITopTabItemProps } from "@root/models"
+import { ITopTabItemProps } from "@root/model"
 import { TabComponent } from "./TabComponent"
 import { useStyles } from './TopTab.style'
 

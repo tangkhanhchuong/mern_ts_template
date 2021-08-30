@@ -1,4 +1,4 @@
-import { IComment } from '@root/models/comment'
+import { IComment } from '@root/model/comment'
 import React from 'react'
 
 import { CommentItem } from '../CommentItem/CommentItem'

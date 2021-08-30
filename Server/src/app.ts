@@ -4,8 +4,8 @@ import { config as dotenv } from "dotenv"
 import cors from "cors"
 import morgan from "morgan"
 
-import { errorHandler } from "./middlewares/errorHandler"
-import { NotFoundError } from "./services/errors"
+import { errorHandler } from "./middleware/errorHandler"
+import { NotFoundError } from "./service/errors"
 
 dotenv()
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use("/storage", express.static(__dirname + "/storage"))
 const server: Server = http.createServer(app)
 
-import { AuthRouter, ProductRouter } from "./routes"
+import { AuthRouter, ProductRouter } from "./route"
 app.use("/auth", AuthRouter)
 app.use("/product", ProductRouter)
 
@@ -35,8 +35,8 @@ app.all("*", async (req: Request, res: Response, next: NextFunction) => {
 
 app.use(errorHandler);
 
-import { connectToMongoDb } from "./configs/database"
-import { connectToSocket } from "./services/socket"
+import { connectToMongoDb } from "./config/database"
+import { connectToSocket } from "./service/socket"
 const bootServer = async () => {
 	console.log("Booting server ...")
 	await connectToMongoDb()

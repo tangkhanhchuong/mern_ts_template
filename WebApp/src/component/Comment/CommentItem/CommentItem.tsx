@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Input, makeStyles, Typography } from '@material-ui/core'
 import { brown } from '@material-ui/core/colors'
-import { IComment } from '@root/models/comment'
+import { IComment } from '@root/model/comment'
 
 interface Props {
     comment: IComment

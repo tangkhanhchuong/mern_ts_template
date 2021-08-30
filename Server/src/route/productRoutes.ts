@@ -1,9 +1,9 @@
 import express from 'express'
 
-import { validateRequest } from '../middlewares/validateRequest'
-import { ProductController } from '../controllers'
-import { requireAuth } from '../middlewares/requireAuth'
-import { ProductValidator } from '../validators'
+import { validateRequest } from '../middleware/validateRequest'
+import { ProductController } from '../controller'
+import { requireAuth } from '../middleware/requireAuth'
+import { ProductValidator } from '../validator'
 
 const router = express.Router()
 

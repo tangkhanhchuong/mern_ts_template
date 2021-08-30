@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 
-import { NotAuthorizedError } from '../services/errors'
+import { NotAuthorizedError } from '../service/errors'
 
 interface UserPayload extends JwtPayload{
     id: string

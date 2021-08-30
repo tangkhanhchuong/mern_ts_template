@@ -1,4 +1,4 @@
-import { Password } from '../services/password'
+import { Password } from '../service/password'
 
 export const usersSeeder = async () => {
     const password = await Password.toHash('123456')

@@ -2,7 +2,7 @@ import {
     IHttpRequestProps, 
     IUserProps, 
     ISignInResponseData 
-} from "@root/models"
+} from "@root/model"
 import httpResponse from "./httpResponse"
 
 export default {

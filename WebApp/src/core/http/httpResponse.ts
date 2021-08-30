@@ -5,7 +5,7 @@ import {
     IHttpResponseProps, 
     IAxiosConfig,
     HttpMethods    
-} from "@root/models/http"
+} from "@root/model/http"
 
 const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_SYSTEM_URL,

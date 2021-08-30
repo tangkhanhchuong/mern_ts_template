@@ -8,7 +8,7 @@
 		"start": "npx ts-node dist/app.js",
 		"dev": "yarn db:seed & nodemon -L src/app.ts",
 		"build": "tsc -p .",
-		"db:seed": "ts-node src/seeders"
+		"db:seed": "ts-node src/seeder"
 	},
 	"keywords": [],
 	"author": "",

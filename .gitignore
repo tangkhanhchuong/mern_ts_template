@@ -5,8 +5,8 @@ WebApp/dist-ssr
 WebApp/*.local
 
 
-Server/node_modules
-Server/yarn.lock
-Server/.env
-Server/dist
-Server/src/storage
+eServer/node_modules
+eServer/yarn.lock
+eServer/.env
+eServer/dist
+eServer/src/storage

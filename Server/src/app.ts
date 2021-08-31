@@ -17,7 +17,10 @@ app.use(morgan("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use("/storage", express.static(__dirname + "/storage"))
+<<<<<<< HEAD
 const server: Server = http.createServer(app)
+=======
+>>>>>>> master
 
 import { AuthRouter, ProductRouter } from "./route"
 app.use("/auth", AuthRouter)

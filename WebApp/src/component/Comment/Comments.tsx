@@ -2,7 +2,7 @@ import { connectToSocket } from '@root/hook/socket'
 import React from 'react'
 import { useEffect } from 'react'
 
-import CommentInput from "./CommentInput/CommentInput"
+import { CommentInput } from "./CommentInput/CommentInput"
 import { CommentList } from './CommentList/CommentList'
 
 interface Props {
@@ -33,7 +33,37 @@ const comments = [
         commentator: "Mendy",
         commentTime: "1 hour ago",
         content: "Mình ghét 2 người khách mời vãi linh hồn"
-    }
+    },
+    {
+        id: "5",
+        commentator: "Mendy",
+        commentTime: "1 hour ago",
+        content: "Mình ghét 2 người khách mời vãi linh hồn"
+    },
+    {
+        id: "6",
+        commentator: "Mendy",
+        commentTime: "1 hour ago",
+        content: "Mình ghét 2 người khách mời vãi linh hồn"
+    },
+    {
+        id: "7",
+        commentator: "Mendy",
+        commentTime: "1 hour ago",
+        content: "Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn Mình ghét 2 người khách mời vãi linh hồn"
+    },
+    {
+        id: "8",
+        commentator: "Mendy",
+        commentTime: "1 hour ago",
+        content: "Mình ghét 2 người khách mời vãi linh hồn"
+    },
+    {
+        id: "9",
+        commentator: "Mendy",
+        commentTime: "1 hour ago",
+        content: "Mình ghét 2 người khách mời vãi linh hồn"
+    },
 ]
 
 const Comments = (props: Props) => {

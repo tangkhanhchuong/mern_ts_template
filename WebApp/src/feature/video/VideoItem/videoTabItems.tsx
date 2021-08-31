@@ -1,7 +1,8 @@
 import React from "react"
 
 import { ITopTabItemProps } from "@root/model"
-import Comments from "../Comment/Comments"
+import Comments from "@root/component/Comment/Comments"
+
 import VideoOverview from "../VideoOverview/VideoOverview"
 
 const Tab2 = () => (

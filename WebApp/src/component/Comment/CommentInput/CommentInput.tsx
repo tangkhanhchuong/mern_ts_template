@@ -1,71 +1,36 @@
 import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import { Avatar, Button, FormControl, Input } from '@material-ui/core'
-import { brown } from '@material-ui/core/colors'
 
 interface Props {
     
 }
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        marginBottom: "30px"
-    },
-    numComments: {
-        fontSize: "16px"
-    },
-    inputField: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "flex-start"
-    },
-    brown: {
-        color: theme.palette.getContrastText(brown[500]),
-        backgroundColor: brown[500],
-    }, 
-    input: {
-        flex: "1",
-        marginLeft: theme.spacing(2)
-    },
-    actionField: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-end"
-    },
-    button: {
-        marginLeft: theme.spacing(1),
-        marginTop: theme.spacing(1),
-    },
-}))
-
-const CommentInput = (props: Props) => {
-    const [show, setShow] = useState<boolean>(false)
-    const styledClass = useStyles()
-    const { root, numComments, brown, inputField, input, button, actionField } = styledClass
-
+export const CommentInput = (props: Props) => {
+    const [isShowed, setIsShowed] = useState<boolean>(false)
+    
     return (
-        <FormControl fullWidth className={root}>
-            <div className={numComments}>
+        <FormControl fullWidth className="mb-3">
+            <p className="h5">
                 335 Comments
-            </div>
+            </p>
             <br />
-            <div className={inputField}>
-                <Avatar className={brown}>C</Avatar>
+            <div className="d-flex flex-row justify-content-start">
+                <Avatar className="bg-danger">C</Avatar>
                 <Input
+                    className="flex-grow-1 ml-3"
                     id="standard-adornment-amount"
                     onChange={() => {}}
-                    onFocus={() => setShow(true)}
+                    onFocus={() => setIsShowed(true)}
                     placeholder="Comment publicly..."
-                    className={input}
                 />
             </div>
             {
-                show ?
-                <div className={actionField}>
-                    <Button className={button} onClick={() => setShow(false)}>
+                isShowed ?
+                <div className="row-end-center">
+                    <Button className="mt-2" onClick={() => setIsShowed(false)}>
                         cancel
                     </Button>
-                    <Button variant="contained" className={button}>
+                    <Button className="mt-2" variant="contained">
                         comment
                     </Button>
                 </div> : <></>
@@ -74,5 +39,3 @@ const CommentInput = (props: Props) => {
         </FormControl>
     )
 }
-
-export default CommentInput

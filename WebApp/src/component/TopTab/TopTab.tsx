@@ -4,7 +4,6 @@ import { AppBar, Tabs, Tab } from "@material-ui/core"
 
 import { ITopTabItemProps } from "@root/model"
 import { TabComponent } from "./TabComponent"
-import { useStyles } from './TopTab.style'
 
 const a11yProps = (index: number) => {
     return {
@@ -15,7 +14,6 @@ const a11yProps = (index: number) => {
 
 export const TopTab: FC<{ items: ITopTabItemProps[] }> = ({ items }) => {
     const [value, setValue] = React.useState(0)
-    const styleClasses = useStyles()
 
     const handleChange = (event: ChangeEvent<{}>, newValue: number) => {
         setValue(newValue)
@@ -26,7 +24,7 @@ export const TopTab: FC<{ items: ITopTabItemProps[] }> = ({ items }) => {
     }
 
     return (
-        <div className={styleClasses.root}>
+        <div>
             <AppBar position="static" color="default">
                 <Tabs
                     value={value}

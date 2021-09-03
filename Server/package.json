@@ -6,9 +6,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "npx ts-node dist/app.js",
-		"dev": "yarn db:seed & nodemon -L src/app.ts",
+		"dev": "nodemon -L src/app.ts",
 		"build": "tsc -p .",
-		"db:seed": "ts-node src/seeder"
+		"seed:run": "ts-node src/seeder"
 	},
 	"keywords": [],
 	"author": "",

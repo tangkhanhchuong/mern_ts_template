@@ -21,4 +21,5 @@ export const connectToSocket = async (server: Server) => {
             socket.emit("push-again")
         })
     })
+    console.log("Hi")
 }
